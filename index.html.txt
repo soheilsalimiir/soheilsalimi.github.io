@@ -1,0 +1,82 @@
+  1 | <!DOCTYPE html>
+  2 | <html lang="fa">
+  3 | <head>
+  4 |   <meta charset="UTF-8">
+  5 |   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  6 |   <title>سهیل سلیمی</title>
+  7 |   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap">
+  8 |   <style>
+  9 |     body {
+ 10 |       font-family: 'Vazirmatn', sans-serif;
+ 11 |       direction: rtl;
+ 12 |       background-color: #fdfdfd;
+ 13 |       color: #222;
+ 14 |       margin: 0;
+ 15 |       padding: 0;
+ 16 |       line-height: 1.8;
+ 17 |     }
+ 18 |     header {
+ 19 |       background-color: #222;
+ 20 |       color: white;
+ 21 |       padding: 1rem;
+ 22 |       text-align: center;
+ 23 |     }
+ 24 |     header img.logo {
+ 25 |       max-height: 80px;
+ 26 |       display: block;
+ 27 |       margin: 0 auto 1rem;
+ 28 |     }
+ 29 |     nav {
+ 30 |       background-color: #f2f2f2;
+ 31 |       padding: 1rem;
+ 32 |       text-align: center;
+ 33 |     }
+ 34 |     nav a {
+ 35 |       margin: 0 1rem;
+ 36 |       color: #333;
+ 37 |       text-decoration: none;
+ 38 |       font-weight: bold;
+ 39 |     }
+ 40 |     nav a:hover {
+ 41 |       color: #007acc;
+ 42 |     }
+ 43 |     main {
+ 44 |       padding: 2rem;
+ 45 |       max-width: 700px;
+ 46 |       margin: auto;
+ 47 |     }
+ 48 |     footer {
+ 49 |       background-color: #eee;
+ 50 |       text-align: center;
+ 51 |       padding: 1rem;
+ 52 |       font-size: 0.9rem;
+ 53 |       color: #666;
+ 54 |     }
+ 55 |   </style>
+ 56 | </head>
+ 57 | <body>
+ 58 |   <header>
+ 59 |     <img src="logo-fa.png" alt="سهیل سلیمی" class="logo">
+ 60 |     <h1>سهیل سلیمی</h1>
+ 61 |     <p>پژوهشگر، نویسنده و تحلیل‌گر رسانه و هوش مصنوعی</p>
+ 62 |   </header>
+ 63 |   <nav>
+ 64 |     <a href="index.html">خانه</a>
+ 65 |     <a href="about.html">درباره من</a>
+ 66 |     <a href="articles/index.html">مقالات</a>
+ 67 |     <a href="contact.html">تماس</a>
+ 68 |   </nav>
+ 69 |   <main>
+ 70 |     <h2>به وب‌سایت رسمی سهیل سلیمی خوش آمدید</h2>
+ 71 |     <p>
+ 72 |       در اینجا می‌توانید مقالات تحلیلی، یادداشت‌های پژوهشی و دیدگاه‌های من درباره رسانه، سایبرنتیک، هوش مصنوعی و نقد فلسفی سینما را بخوانید.
+ 73 |     </p>
+ 74 |     <p>
+ 75 |       آخرین نوشته‌ها و پروژه‌ها به‌زودی در بخش مقالات قرار خواهند گرفت.
+ 76 |     </p>
+ 77 |   </main>
+ 78 |   <footer>
+ 79 |     &copy; 2025 سهیل سلیمی | کلیه حقوق محفوظ است.
+ 80 |   </footer>
+ 81 | </body>
+ 82 | </html>
