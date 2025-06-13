@@ -3,85 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سهیل سلیمی | نویسنده و فیلمساز</title>
+  <title>سهیل سلیمی | نویسنده و فیلمساز | پژوهشگر حوزه مطالعات استراتژیک فرهنگی، سایبرنتیک و هوش مصنوعی</title>
   <link href="https://fonts.googleapis.com/css2?family=Anjoman:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Anjoman', sans-serif;
-      background-color: #d1d5db; /* Gray background */
-      color: #4a2c2a; /* Dark brown for contrast */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
+    body {
+      font-family: 'Anjoman', sans-serif;
+      background: #4b5e6a; /* Base gray for particle canvas */
+      color: #e0f7fa; /* Light cyan for contrast */
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .parallax {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .header-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 15vh 20px;
+      color: #2ecc71; /* Vibrant emerald green */
+    }
+    .header-content h1 {
+      font-size: 3.5rem;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+      font-weight: 700;
+    }
+    .header-content h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #00ced1; /* Deep cyan */
+      margin-top: 10px;
+    }
+    .header-content img {
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      margin: 10px;
+    }
+    .trailer {
+      margin: 2.5rem 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .trailer video {
+      max-width: 45%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
     nav {
-      background-color: #f97316; /* Vibrant orange */
-      padding: 1rem;
-      border-radius: 8px;
+      background: rgba(46, 204, 113, 0.95); /* Emerald green semi-transparent */
+      padding: 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
     }
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 2.5rem;
     }
     nav ul li a {
-      color: #fef3c7; /* Warm yellow for text */
+      color: #e0f7fa;
       text-decoration: none;
       font-weight: 700;
-      transition: color 0.3s;
+      font-size: 1.1rem;
+      transition: color 0.3s, transform 0.3s;
     }
     nav ul li a:hover {
-      color: #fff7ed; /* Light cream hover */
+      color: #a3e4d7;
+      transform: scale(1.15);
     }
     .accordion {
-      margin: 1rem 0;
-      background-color: #fdba74; /* Warm peach */
-      border-radius: 8px;
+      margin: 2.5rem auto;
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
       overflow: hidden;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
     .accordion-header {
-      padding: 1rem;
-      background-color: #f97316; /* Orange */
-      color: #fef3c7; /* Warm yellow */
+      padding: 1.8rem;
+      background: linear-gradient(90deg, #2ecc71, #00ced1); /* Emerald to cyan gradient */
+      color: #fff;
       cursor: pointer;
-      font-weight: 700;
+      font-size: 1.3rem;
+      transition: background 0.3s, transform 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion-header:hover {
+      background: linear-gradient(90deg, #00ced1, #2ecc71);
+      transform: translateY(-2px);
     }
     .accordion-content {
-      padding: 0 1rem 1rem;
+      padding: 1.8rem;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease-out;
+      transition: max-height 0.6s ease, opacity 0.6s ease;
+      opacity: 0;
+      background: rgba(255, 255, 255, 0.08);
     }
     .accordion-content.active {
-      max-height: 500px; /* Adjust based on content */
+      max-height: 700px;
+      opacity: 1;
+    }
+    .accordion-content a {
+      color: #2ecc71;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
+    .accordion-content a:hover {
+      text-decoration: underline;
+      color: #00ced1;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .gallery img {
+      max-width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
     }
     .chatbot {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 60px;
-      height: 60px;
-      background-color: #f97316; /* Orange */
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(45deg, #2ecc71, #00ced1);
       border-radius: 50%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fef3c7; /* Warm yellow */
-      font-size: 24px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      color: #fff;
+      font-size: 30px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
     .chatbot:hover {
-      background-color: #ea580c; /* Darker orange */
+      animation-play-state: paused;
+      background: linear-gradient(45deg, #00ced1, #2ecc71);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
+  <canvas id="particleCanvas"></canvas>
+  <div class="parallax">
+    <div class="header-content">
+      <img src="logo.jpg" alt="لوگو سهیل سلیمی">
+      <img src="photo.jpg" alt="عکس سهیل سلیمی">
+      <h1>سهیل سلیمی</h1>
+      <h2>نویسنده و فیلمساز | پژوهشگر حوزه مطالعات استراتژیک فرهنگی، سایبرنتیک و هوش مصنوعی</h2>
+    </div>
+  </div>
   <nav>
     <ul>
       <li><a href="#cinema">سینما و رسانه</a></li>
@@ -99,114 +212,197 @@
   </nav>
 
   <div class="container">
-    <header>
-      <img src="logo.jpg" alt="لوگو سهیل سلیمی" style="max-width: 200px;">
-      <img src="photo.jpg" alt="عکس سهیل سلیمی" style="max-width: 200px;">
-      <h1>سهیل سلیمی | نویسنده و فیلمساز | پژوهشگر حوزه مطالعات استراتژیک فرهنگی، سایبرنتیک و هوش مصنوعی</h1>
-    </header>
+    <div class="trailer">
+      <video controls poster="https://via.placeholder.com/600x300?text=Trailer+1">
+        <source src="trailer1.mp4" type="video/mp4">
+        مرورگر شما از ویدئو پشتیبانی نمی‌کند.
+      </video>
+      <video controls poster="https://via.placeholder.com/600x300?text=Trailer+2">
+        <source src="trailer2.mp4" type="video/mp4">
+        مرورگر شما از ویدئو پشتیبانی نمی‌کند.
+      </video>
+    </div>
 
     <div class="accordion" id="cinema">
-      <div class="accordion-header" onclick="toggleAccordion('cinema-content')">سینما و رسانه</div>
+      <div class="accordion-header" onclick="toggleAccordion('cinema-content')">سینما و رسانه <span>▶</span></div>
       <div class="accordion-content" id="cinema-content">
-        <p>محتوای مربوط به سینما و رسانه در اینجا قرار می‌گیرد.</p>
-        <a href="#cyber">برو به سایبرنتیک و هوش مصنوعی</a> | <a href="#strategy">برو به استراتژی</a>
+        <p>جهان سینمای سهیل سلیمی، جایی که هنر و استراتژی در هم می‌آمیزد.</p>
+        <a href="#cyber">سایبرنتیک و هوش مصنوعی</a> | <a href="#strategy">استراتژی</a>
       </div>
     </div>
 
     <div class="accordion" id="cyber">
-      <div class="accordion-header" onclick="toggleAccordion('cyber-content')">سایبرنتیک و هوش مصنوعی</div>
+      <div class="accordion-header" onclick="toggleAccordion('cyber-content')">سایبرنتیک و هوش مصنوعی <span>▶</span></div>
       <div class="accordion-content" id="cyber-content">
-        <p>محتوای مربوط به سایبرنتیک و هوش مصنوعی در اینجا قرار می‌گیرد.</p>
-        <a href="#cinema">برو به سینما و رسانه</a> | <a href="#strategy">برو به استراتژی</a>
+        <p>اکتشاف در مرزهای فناوری با نگاهی سینمایی.</p>
+        <a href="#cinema">سینما و رسانه</a> | <a href="#strategy">استراتژی</a>
       </div>
     </div>
 
     <div class="accordion" id="strategy">
-      <div class="accordion-header" onclick="toggleAccordion('strategy-content')">استراتژی</div>
+      <div class="accordion-header" onclick="toggleAccordion('strategy-content')">استراتژی <span>▶</span></div>
       <div class="accordion-content" id="strategy-content">
-        <p>محتوای مربوط به استراتژی در اینجا قرار می‌گیرد.</p>
-        <a href="#cinema">برو به سینما و رسانه</a> | <a href="#cyber">برو به سایبرنتیک و هوش مصنوعی</a>
+        <p>استراتژی‌های پیشگامانه که آینده سینما را شکل می‌دهند.</p>
+        <a href="#cinema">سینما و رسانه</a> | <a href="#cyber">سایبرنتیک و هوش مصنوعی</a>
       </div>
     </div>
 
     <div class="accordion" id="works">
-      <div class="accordion-header" onclick="toggleAccordion('works-content')">آثار</div>
+      <div class="accordion-header" onclick="toggleAccordion('works-content')">آثار <span>▶</span></div>
       <div class="accordion-content" id="works-content">
-        <p>لیست آثار در اینجا قرار می‌گیرد.</p>
-        <a href="#samples">برو به نمونه آثار</a> | <a href="#resume">برو به رزومه</a>
+        <p>اثار ماندگار که نام سهیل سلیمی را جاودانه کرده‌اند.</p>
+        <a href="#samples">نمونه آثار</a> | <a href="#resume">رزومه</a>
       </div>
     </div>
 
     <div class="accordion" id="samples">
-      <div class="accordion-header" onclick="toggleAccordion('samples-content')">نمونه آثار</div>
+      <div class="accordion-header" onclick="toggleAccordion('samples-content')">نمونه آثار <span>▶</span></div>
       <div class="accordion-content" id="samples-content">
-        <p>نمونه‌های آثار در اینجا قرار می‌گیرد.</p>
-        <a href="#works">برو به آثار</a> | <a href="#resume">برو به رزومه</a>
+        <p>نمایشگاهی از شاهکارهای بصری یک فوق ستاره.</p>
+        <a href="#works">آثار</a> | <a href="#resume">رزومه</a>
       </div>
     </div>
 
     <div class="accordion" id="resume">
-      <div class="accordion-header" onclick="toggleAccordion('resume-content')">رزومه</div>
+      <div class="accordion-header" onclick="toggleAccordion('resume-content')">رزومه <span>▶</span></div>
       <div class="accordion-content" id="resume-content">
-        <p>سهیل سلیمی متولد 1357 تهران دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد اسلامی، دانش آموخته کارگردانی سینما از انجمن سینمای جوانان ایران، گواهینامه سطح دو استراتژی با گرایش سینمای استراتژیک از مرکز دکترینال اندیشکده یقین، مشاور رسانه‌ای آزمایشگاه پژوهشی فضای سایبر دانشگاه تهران، پژوهشگر مطالعات سایبرنتیک و هوش مصنوعی، و دارای گواهینامه‌های مدیریت منابع انسانی، مدیریت ذهن، و مدیریت کارآفرینی.</p>
-        <a href="#samples">برو به نمونه آثار</a> | <a href="#awards">برو به جوایز و تقدیرها</a>
+        <p>سهیل سلیمی، متولد 1357 تهران، کارگردان برجسته با مدارک معتبر از وزارت فرهنگ و ارشاد اسلامی، انجمن سینمای جوانان ایران، و گواهینامه‌های استراتژیک و مدیریتی از مراکز معتبر جهانی.</p>
+        <a href="#samples">نمونه آثار</a> | <a href="#awards">جوایز و تقدیرها</a>
       </div>
     </div>
 
     <div class="accordion" id="awards">
-      <div class="accordion-header" onclick="toggleAccordion('awards-content')">جوایز و تقدیرها</div>
+      <div class="accordion-header" onclick="toggleAccordion('awards-content')">جوایز و تقدیرها <span>▶</span></div>
       <div class="accordion-content" id="awards-content">
-        <ul>
-          <li>برنده جایزه اول جشنواره فیلم "فیلماکا" آمریکا برای مستند "سفری به جنگ با یک بازیگر" 1398</li>
-          <li>کاندید مردمی "بهترین فیلمنامه نویس" جشنواره فیلم مقاومت 1397</li>
-        </ul>
-        <a href="#resume">برو به رزومه</a> | <a href="#social">برو به شبکه های اجتماعی</a>
+        <div class="gallery">
+          <img src="https://via.placeholder.com/200x150?text=Award+1" alt="جایزه 1">
+          <img src="https://via.placeholder.com/200x150?text=Award+2" alt="جایزه 2">
+          <img src="https://via.placeholder.com/200x150?text=Award+3" alt="جایزه 3">
+        </div>
+        <p>جایزه اول جشنواره فیلم "فیلماکا" آمریکا (1398)، کاندید بهترین فیلمنامه جشنواره مقاومت (1397).</p>
+        <a href="#resume">رزومه</a> | <a href="#social">شبکه های اجتماعی</a>
       </div>
     </div>
 
     <div class="accordion" id="social">
-      <div class="accordion-header" onclick="toggleAccordion('social-content')">شبکه های اجتماعی</div>
+      <div class="accordion-header" onclick="toggleAccordion('social-content')">شبکه های اجتماعی <span>▶</span></div>
       <div class="accordion-content" id="social-content">
-        <p>https://www.youtube.com/@soheilsalimi1</p>
-        <a href="#awards">برو به جوایز و تقدیرها</a> | <a href="#related">برو به صفحات مرتبط</a>
+        <p><a href="https://www.youtube.com/@soheilsalimi1" target="_blank">یوتیوب</a></p>
+        <a href="#awards">جوایز و تقدیرها</a> | <a href="#related">صفحات مرتبط</a>
       </div>
     </div>
 
     <div class="accordion" id="related">
-      <div class="accordion-header" onclick="toggleAccordion('related-content')">صفحات مرتبط</div>
+      <div class="accordion-header" onclick="toggleAccordion('related-content')">صفحات مرتبط <span>▶</span></div>
       <div class="accordion-content" id="related-content">
-        <p>https://soheilsalimi.blogsky.com/</p>
-        <a href="#social">برو به شبکه های اجتماعی</a> | <a href="#about">برو به درباره من</a>
+        <p><a href="https://soheilsalimi.blogsky.com/" target="_blank">بلاگ</a></p>
+        <a href="#social">شبکه های اجتماعی</a> | <a href="#about">درباره من</a>
       </div>
     </div>
 
     <div class="accordion" id="about">
-      <div class="accordion-header" onclick="toggleAccordion('about-content')">درباره من</div>
+      <div class="accordion-header" onclick="toggleAccordion('about-content')">درباره من <span>▶</span></div>
       <div class="accordion-content" id="about-content">
-        <p>سهیل سلیمی متولد 1357 تهران دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد اسلامی، دانش آموخته کارگردانی سینما از انجمن سینمای جوانان ایران، گواهینامه سطح دو استراتژی با گرایش سینمای استراتژیک از مرکز دکترینال اندیشکده یقین، مشاور رسانه‌ای آزمایشگاه پژوهشی فضای سایبر دانشگاه تهران، پژوهشگر مطالعات سایبرنتیک و هوش مصنوعی، و دارای گواهینامه‌های مدیریت منابع انسانی، مدیریت ذهن، و مدیریت کارآفرینی.</p>
-        <a href="#related">برو به صفحات مرتبط</a> | <a href="#contact">برو به تماس</a>
+        <p>سهیل سلیمی، یک فوق ستاره سینمایی و پژوهشگر پیشگام در حوزه‌های استراتژیک فرهنگی، سایبرنتیک و هوش مصنوعی.</p>
+        <a href="#related">صفحات مرتبط</a> | <a href="#contact">تماس</a>
       </div>
     </div>
 
     <div class="accordion" id="contact">
-      <div class="accordion-header" onclick="toggleAccordion('contact-content')">تماس</div>
+      <div class="accordion-header" onclick="toggleAccordion('contact-content')">تماس <span>▶</span></div>
       <div class="accordion-content" id="contact-content">
-        <p>پیامک، واتس اپ، تلگرام، ایتا، بله: 09939494184<br>https://eitaa.com/soheilsalimi1</p>
-        <a href="#about">برو به درباره من</a>
+        <p>شماره تماس: 00000000000<br><a href="https://eitaa.com/soheilsalimi1" target="_blank">ایتا</a></p>
+        <a href="#about">درباره من</a>
       </div>
     </div>
   </div>
 
-  <div class="chatbot" onclick="openChatbot()">💬</div>
+  <div class="chatbot" onclick="openChatbot()">🤖</div>
 
   <script>
     function toggleAccordion(id) {
       const content = document.getElementById(id);
+      const allContents = document.querySelectorAll('.accordion-content');
+      allContents.forEach(c => {
+        if (c.id !== id) c.classList.remove('active');
+      });
       content.classList.toggle('active');
     }
     function openChatbot() {
-      alert('چت بات در حال اجرا است. برای پشتیبانی از من بپرسید!');
+      alert('چت بات هوش مصنوعی سهیل سلیمی فعال شد. چگونه می‌توانم به شما کمک کنم؟');
     }
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.accordion-header').forEach(header => {
+        header.style.transform = `translateY(${window.scrollY * 0.05}px)`;
+      });
+    });
+
+    // Particle Background
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particlesArray = [];
+    const numberOfParticles = 100;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 1.5 - 0.75;
+        this.speedY = Math.random() * 1.5 - 0.75;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+        if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)'; // White particles
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+        for (let j = i; j < particlesArray.length; j++) {
+          const dx = particlesArray[i].x - particlesArray[j].x;
+          const dy = particlesArray[i].y - particlesArray[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < 150) { // Longer connection lines
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(255, 255, 255, ' + (1 - distance / 150) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+            ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
   </script>
 </body>
 </html>
