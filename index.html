@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-fa="سهیل سلیمی | نویسنده و فیلمساز" data-en="Soheil Salimi | Writer and Filmmaker">سهیل سلیمی | نویسنده و فیلمساز</title>
-  <link rel="icon" href="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa-cornerlogo.png">
+  <title>سهیل سلیمی | نویسنده و فیلمساز</title>
+  <link rel="icon" href="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa-cornerlogo.png.png">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/anjoman" rel="stylesheet">
   <style>
@@ -18,7 +18,6 @@
     [lang="en"] {
       direction: ltr;
       font-family: 'Arial', sans-serif;
-      text-align: left;
     }
     canvas#particles {
       position: fixed;
@@ -56,11 +55,11 @@
       width: 100%;
     }
     .nav-menu li {
-      margin-right: 1.5rem;
+      margin-left: 1.5rem;
     }
     [lang="en"] .nav-menu li {
-      margin-right: 0;
-      margin-left: 1.5rem;
+      margin-left: 0;
+      margin-right: 1.5rem;
     }
     .header-profile {
       width: 60px;
@@ -69,7 +68,6 @@
       border-radius: 8px;
       border: 2px solid #d4af37;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
     }
     .header-profile:hover {
       transform: scale(1.1);
@@ -135,7 +133,7 @@
       margin-bottom: 1.5rem;
     }
     [lang="en"] .section-header {
-      flex-direction: row;
+      flex-direction: row-reverse;
     }
     .section-profile {
       width: 50px;
@@ -148,13 +146,6 @@
     [lang="en"] .section-profile {
       margin-left: 0;
       margin-right: 1rem;
-    }
-    .list-disc {
-      padding-right: 2rem;
-    }
-    [lang="en"] .list-disc {
-      padding-right: 0;
-      padding-left: 2rem;
     }
     .footer-logo {
       position: fixed;
@@ -222,8 +213,8 @@
       background: #d4af37;
       color: #0f0f0f;
       padding: 1rem;
-      border-top-left-radius: 12px;
       border-top-right-radius: 12px;
+      border-top-left-radius: 12px;
       font-weight: bold;
       text-align: center;
     }
@@ -245,7 +236,7 @@
       margin-right: 0.5rem;
     }
     [lang="en"] .bot-message {
-      margin-right: auto;
+      margin-right: 0;
       margin-left: 0.5rem;
     }
     .user-message {
@@ -255,7 +246,7 @@
       text-align: right;
     }
     [lang="en"] .user-message {
-      margin-left: auto;
+      margin-left: 0;
       margin-right: 0.5rem;
       text-align: left;
     }
@@ -328,11 +319,11 @@
         display: flex;
       }
       .nav-menu li {
-        margin-right: 0;
+        margin-left: 0;
         margin-bottom: 1rem;
       }
       [lang="en"] .nav-menu li {
-        margin-left: 0;
+        margin-right: 0;
       }
       .hamburger {
         display: block;
@@ -359,20 +350,6 @@
       [lang="en"] .chatbot-container {
         right: auto;
         left: 5%;
-      }
-      .section-header {
-        justify-content: flex-start;
-      }
-      [lang="en"] .section-header {
-        justify-content: flex-start;
-      }
-      .section-profile {
-        margin-left: 0;
-        margin-right: 1rem;
-      }
-      [lang="en"] .section-profile {
-        margin-right: 0;
-        margin-left: 1rem;
       }
     }
     @media (min-width: 769px) {
@@ -424,9 +401,7 @@
   <nav class="bg-gray-900 p-5 shadow-2xl fixed w-full z-50">
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center">
-        <a href="#">
-          <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalini-pic.jpg" alt="عکس سهیل" class="header-profile md:block">
-        </a>
+        <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalini-pic.jpg" alt="عکس سهیل" class="header-profile md:block">
         <div class="hamburger md:hidden text-white text-3xl cursor-pointer" onclick="toggleMenu()">☰</div>
       </div>
       <ul class="nav-menu hidden md:flex space-x-8">
@@ -442,7 +417,7 @@
         <li><a href="#about" class="nav-link text-lg" data-fa="درباره من" data-en="About Me">درباره من</a></li>
         <li><a href="#contact" class="nav-link text-lg" data-fa="تماس" data-en="Contact">تماس</a></li>
       </ul>
-      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa-cornerlogo.png" alt="لوگو گوشه" class="header-logo md:block hidden">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa-cornerlogo.png.png" alt="لوگو گوشه" class="header-logo md:block hidden">
     </div>
   </nav>
 
@@ -452,7 +427,7 @@
       <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="hero-profile mx-auto">
       <h1 class="text-6xl md:text-8xl font-bold text-white animate-pulse" data-fa="سهیل سلیمی" data-en="Soheil Salimi">سهیل سلیمی</h1>
       <p class="text-2xl md:text-3xl mt-6 text-gray-200" data-fa="نویسنده و فیلمساز | پژوهشگر مطالعات استراتژیک و سایبرنتیک" data-en="Writer and Filmmaker | Researcher in Strategic Studies and Cybernetics">نویسنده و فیلمساز | پژوهشگر مطالعات استراتژیک و سایبرنتیک</p>
-      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa.png" alt="لوگو اصلی" class="main-logo mx-auto mt-8">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa.png.png" alt="لوگو اصلی" class="main-logo mx-auto mt-8">
       <a href="#works" class="mt-8 inline-block bg-teal-500 text-white py-4 px-8 rounded-full hover:bg-teal-600 transition-transform hover:scale-105 text-lg" data-fa="مشاهده آثار" data-en="View Works">مشاهده آثار</a>
     </div>
   </section>
@@ -489,19 +464,19 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="card">
-        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مستند 'رویای سون‌تزو' (1403)" data-en="Documentary 'Sun Tzu’s Dream' (2024)">مستند "رویای سون‌تزو" (1403)</h3>
+        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مستند &quot;رویای سون‌تزو&quot; (1403)" data-en="Documentary &quot;Sun Tzu’s Dream&quot; (2024)">مستند &quot;رویای سون‌تزو&quot; (1403)</h3>
         <p class="text-lg" data-fa="کارگردانی، نویسندگی و تهیه‌کنندگی" data-en="Directing, Screenwriting, and Producing">کارگردانی، نویسندگی و تهیه‌کنندگی</p>
       </div>
       <div class="card">
-        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مجموعه مستند 'جنایت نامرئی' (1401-1399)" data-en="Documentary Series 'Invisible Crime' (2020-2022)">مجموعه مستند "جنایت نامرئی" (1401-1399)</h3>
+        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مجموعه مستند &quot;جنایت نامرئی&quot; (1401-1399)" data-en="Documentary Series &quot;Invisible Crime&quot; (2020-2022)">مجموعه مستند &quot;جنایت نامرئی&quot; (1401-1399)</h3>
         <p class="text-lg" data-fa="کارگردانی، نویسندگی و تهیه‌کنندگی" data-en="Directing, Screenwriting, and Producing">کارگردانی، نویسندگی و تهیه‌کنندگی</p>
       </div>
       <div class="card">
-        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مجموعه مستند 'جاری چون رود' (1401-1400)" data-en="Documentary Series 'Flowing Like a River' (2021-2022)">مجموعه مستند "جاری چون رود" (1401-1400)</h3>
+        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مجموعه مستند &quot;جاری چون رود&quot; (1401-1400)" data-en="Documentary Series &quot;Flowing Like a River&quot; (2021-2022)">مجموعه مستند &quot;جاری چون رود&quot; (1401-1400)</h3>
         <p class="text-lg" data-fa="کارگردانی، نویسندگی و تدوین" data-en="Directing, Screenwriting, and Editing">کارگردانی، نویسندگی و تدوین</p>
       </div>
       <div class="card">
-        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مستند 'جهان فانتزی من' (1399)" data-en="Documentary 'My Fantasy World' (2020)">مستند "جهان فانتزی من" (1399)</h3>
+        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مستند &quot;جهان فانتزی من&quot; (1399)" data-en="Documentary &quot;My Fantasy World&quot; (2020)">مستند &quot;جهان فانتزی من&quot; (1399)</h3>
         <p class="text-lg" data-fa="کارگردانی و تدوین" data-en="Directing and Editing">کارگردانی و تدوین</p>
       </div>
     </div>
@@ -520,12 +495,12 @@
       <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
       <h2 class="text-4xl font-bold text-teal-400" data-fa="جوایز و تقدیرها" data-en="Awards">جوایز و تقدیرها</h2>
     </div>
-    <ul class="list-disc text-xl leading-relaxed">
-      <li data-fa="برنده جایزه اول جشنواره 'FiLMAKA' آمریکا برای مستند 'سفری به جنگ با یک بازیگر' (1398)" data-en="Winner of the First Prize at the 'FiLMAKA' Festival in the USA for the documentary 'A Journey to War with an Actor' (2019)">برنده جایزه اول جشنواره "FiLMAKA" آمریکا برای مستند "سفری به جنگ با یک بازیگر" (1398)</li>
+    <ul class="list-disc pr-8 text-xl leading-relaxed">
+      <li data-fa="برنده جایزه اول جشنواره &quot;FiLMAKA&quot; آمریکا برای مستند &quot;سفری به جنگ با یک بازیگر&quot; (1398)" data-en="Winner of the First Prize at the &quot;FiLMAKA&quot; Festival in the USA for the documentary &quot;A Journey to War with an Actor&quot; (2019)">برنده جایزه اول جشنواره &quot;FiLMAKA&quot; آمریکا برای مستند &quot;سفری به جنگ با یک بازیگر&quot; (1398)</li>
       <li data-fa="کاندیدای مردمی بهترین فیلمنامه‌نویس جشنواره مقاومت (1397)" data-en="People’s Choice Nominee for Best Screenwriter at the Resistance Festival (2018)">کاندیدای مردمی بهترین فیلمنامه‌نویس جشنواره مقاومت (1397)</li>
       <li data-fa="دریافت جایزه جنگاور نور از دانشگاه بریتیش کلمبیا (1392)" data-en="Received the Light Warrior Award from the University of British Columbia (2013)">دریافت جایزه جنگاور نور از دانشگاه بریتیش کلمبیا (1392)</li>
-      <li data-fa="جایزه سرخپوستان کانادا برای کارگردانی فیلم 'فرشتگان قصاب' (1392)" data-en="Canadian Indigenous Award for Directing the film 'Angels of the Butcher' (2013)">جایزه سرخپوستان کانادا برای کارگردانی فیلم "فرشتگان قصاب" (1392)</li>
-      <li data-fa="فانوس زرین بهترین فیلمنامه جشنواره عمار برای 'فرشتگان قصاب' (1392)" data-en="Golden Lantern for Best Screenplay at the Ammar Festival for 'Angels of the Butcher' (2013)">فانوس زرین بهترین فیلمنامه جشنواره عمار برای "فرشتگان قصاب" (1392)</li>
+      <li data-fa="جایزه سرخپوستان کانادا برای کارگردانی فیلم &quot;فرشتگان قصاب&quot; (1392)" data-en="Canadian Indigenous Award for Directing the film &quot;Angels of the Butcher&quot; (2013)">جایزه سرخپوستان کانادا برای کارگردانی فیلم &quot;فرشتگان قصاب&quot; (1392)</li>
+      <li data-fa="فانوس زرین بهترین فیلمنامه جشنواره عمار برای &quot;فرشتگان قصاب&quot; (1392)" data-en="Golden Lantern for Best Screenplay at the Ammar Festival for &quot;Angels of the Butcher&quot; (2013)">فانوس زرین بهترین فیلمنامه جشنواره عمار برای &quot;فرشتگان قصاب&quot; (1392)</li>
     </ul>
   </section>
 
@@ -551,7 +526,7 @@
       <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
       <h2 class="text-4xl font-bold text-teal-400" data-fa="صفحات مرتبط" data-en="Related Pages">صفحات مرتبط</h2>
     </div>
-    <ul class="list-disc text-xl leading-relaxed">
+    <ul class="list-disc pr-8 text-xl leading-relaxed">
       <li><a href="https://soheilsalimi.blogsky.com/" target="_blank" class="text-teal-500 hover:text-teal-400" data-fa="وبلاگ" data-en="Blog">وبلاگ</a></li>
       <li><a href="https://www.imdb.com/name/nm9375886/" target="_blank" class="text-teal-500 hover:text-teal-400" data-fa="IMDb" data-en="IMDb">IMDb</a></li>
       <li><a href="https://filmfreeway.com/SOHEILSALIMI" target="_blank" class="text-teal-500 hover:text-teal-400" data-fa="FilmFreeway" data-en="FilmFreeway">FilmFreeway</a></li>
@@ -577,7 +552,7 @@
   </section>
 
   <!-- Footer Logo -->
-  <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-ssalimi.png" alt="لوگوی انگلیسی" class="footer-logo h-20">
+  <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-ssalimi.png.png" alt="لوگوی انگلیسی" class="footer-logo h-20">
 
   <script>
     // Particle Background
@@ -725,16 +700,15 @@
       document.querySelectorAll('[data-fa-placeholder][data-en-placeholder]').forEach(element => {
         element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
       });
-      document.title = document.querySelector('title').getAttribute(`data-${lang}`);
       toggleChatbot(false); // Reset chatbot
       const messages = document.getElementById('chatbotMessages');
       messages.innerHTML = `<div class="chatbot-message bot-message" data-fa="سلام، من خیام هستم از وبسایت سهیل سلیمی، چه کمکی میتونم بهت بکنم؟" data-en="Hello, I'm Khayyam from Soheil Salimi's website. How can I assist you?">${lang === 'fa' ? 'سلام، من خیام هستم از وبسایت سهیل سلیمی، چه کمکی میتونم بهت بکنم؟' : 'Hello, I\'m Khayyam from Soheil Salimi\'s website. How can I assist you?'}</div>`;
     }
 
     // Chatbot Functionality
-    function toggleChatbot(show = true) {
+    function toggleChatbot(force = true) {
       const chatbotContainer = document.getElementById('chatbotContainer');
-      chatbotContainer.style.display = show ? 'flex' : 'none';
+      chatbotContainer.style.display = chatbotContainer.style.display === 'flex' ? 'none' : 'flex';
       if (show && document.documentElement.lang === 'en') {
         const messages = document.getElementById('chatbotMessages');
         messages.innerHTML = `<div class="chatbot-message bot-message" data-fa="سلام، من خیام هستم از وبسایت سهیل سلیمی، چه کمکی میتونم بهت بکنم؟" data-en="Hello, I'm Khayyam from Soheil Salimi's website. How can I assist you?">Hello, I'm Khayyam from Soheil Salimi's website. How can I assist you?</div>`;
@@ -783,7 +757,7 @@
       } else if (lowerMessage.includes(isFa ? 'آثار' : 'works') || lowerMessage.includes(isFa ? 'فیلم' : 'film')) {
         return isFa ? 'برای مشاهده آثار سهیل سلیمی، به بخش "آثار" مراجعه کنید. مستندهایی مثل "رویای سون‌تزو" و "جنایت نامرئی" را از دست ندهید!' : 'To view Soheil Salimi’s works, go to the "Works" section. Don’t miss documentaries like "Sun Tzu’s Dream" and "Invisible Crime"!';
       } else if (lowerMessage.includes(isFa ? 'تماس' : 'contact')) {
-        return isFa ? 'می‌توانید از طریق ایتا (https://eitaa.com/soheilsalimi1) یا شماره 09800000000 با سهیل سلیمی تماس بگیرید.' : 'You can contact Soheil Salimi via Eitaa (https://eitaa.com/soheilsalimi1) or the number 09800000000.';
+        return isFa ? 'می‌توانید از طریق ایتا[](https://eitaa.com/soheilsalimi1) یا شماره 09800000000 با سهیل سلیمی تماس بگیرید.' : 'You can contact Soheil Salimi via Eitaa[](https://eitaa.com/soheilsalimi1) or the number 09800000000.';
       }
 
       // Screenwriting lessons
