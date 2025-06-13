@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سهیل سلیمی | نویسنده و فیلمساز</title>
-  <link rel="icon" href="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa-cornerlogo.png.png">
+  <title data-fa="سهیل سلیمی | نویسنده و فیلمساز" data-en="Soheil Salimi | Writer and Filmmaker">سهیل سلیمی | نویسنده و فیلمساز</title>
+  <link rel="icon" href="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa-cornerlogo.png">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/anjoman" rel="stylesheet">
   <style>
@@ -15,6 +15,11 @@
       overflow-x: hidden;
       position: relative;
     }
+    [lang="en"] {
+      direction: ltr;
+      font-family: 'Arial', sans-serif;
+      text-align: left;
+    }
     canvas#particles {
       position: fixed;
       top: 0;
@@ -22,7 +27,7 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      opacity: 0.45;
+      opacity: 0.5;
     }
     .nav-link {
       position: relative;
@@ -43,8 +48,19 @@
       background-color: #d4af37;
       transition: width 0.3s ease;
     }
+    [lang="en"] .nav-link::after {
+      right: auto;
+      left: 0;
+    }
     .nav-link:hover::after {
       width: 100%;
+    }
+    .nav-menu li {
+      margin-right: 1.5rem;
+    }
+    [lang="en"] .nav-menu li {
+      margin-right: 0;
+      margin-left: 1.5rem;
     }
     .header-profile {
       width: 60px;
@@ -53,6 +69,7 @@
       border-radius: 8px;
       border: 2px solid #d4af37;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
     .header-profile:hover {
       transform: scale(1.1);
@@ -69,13 +86,21 @@
       transform: scale(1.1);
     }
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalini-pic.jpg') no-repeat center/cover;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/backgrand-soheilsalimi-site.jpg') no-repeat center/cover;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       animation: fadeIn 3s ease-in-out;
+    }
+    .hero-profile {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid #d4af37;
+      margin-bottom: 1rem;
     }
     @keyframes fadeIn {
       0% { opacity: 0; transform: scale(0.95); }
@@ -104,12 +129,43 @@
       transform: translateY(-10px);
       box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
     }
+    .section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    [lang="en"] .section-header {
+      flex-direction: row;
+    }
+    .section-profile {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #d4af37;
+      margin-left: 1rem;
+    }
+    [lang="en"] .section-profile {
+      margin-left: 0;
+      margin-right: 1rem;
+    }
+    .list-disc {
+      padding-right: 2rem;
+    }
+    [lang="en"] .list-disc {
+      padding-right: 0;
+      padding-left: 2rem;
+    }
     .footer-logo {
       position: fixed;
       bottom: 30px;
       left: 30px;
       opacity: 0.6;
       transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    [lang="en"] .footer-logo {
+      left: auto;
+      right: 30px;
     }
     .footer-logo:hover {
       opacity: 1;
@@ -120,6 +176,10 @@
       top: 20px;
       left: 20px;
       z-index: 1000;
+    }
+    [lang="en"] .language-switcher {
+      left: auto;
+      right: 20px;
     }
     .chatbot-button {
       position: fixed;
@@ -133,9 +193,102 @@
       z-index: 1000;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    [lang="en"] .chatbot-button {
+      right: auto;
+      left: 30px;
+    }
     .chatbot-button:hover {
       transform: scale(1.3);
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    }
+    .chatbot-container {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 340px;
+      max-height: 500px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+    }
+    [lang="en"] .chatbot-container {
+      right: auto;
+      left: 30px;
+    }
+    .chatbot-header {
+      background: #d4af37;
+      color: #0f0f0f;
+      padding: 1rem;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .chatbot-messages {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      background: #1a1a1a;
+    }
+    .chatbot-message {
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+      max-width: 80%;
+    }
+    .bot-message {
+      background: #d4af37;
+      color: #0f0f0f;
+      margin-right: 0.5rem;
+    }
+    [lang="en"] .bot-message {
+      margin-right: auto;
+      margin-left: 0.5rem;
+    }
+    .user-message {
+      background: #38b2ac;
+      color: #f0f0f0;
+      margin-left: 0.5rem;
+      text-align: right;
+    }
+    [lang="en"] .user-message {
+      margin-left: auto;
+      margin-right: 0.5rem;
+      text-align: left;
+    }
+    .chatbot-input {
+      display: flex;
+      padding: 1rem;
+      background: #1a1a1a;
+      border-top: 1px solid #d4af37;
+    }
+    .chatbot-input input {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      background: #0f0f0f;
+      color: #f0f0f0;
+      outline: none;
+    }
+    .chatbot-input button {
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+      background: #d4af37;
+      color: #0f0f0f;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    [lang="en"] .chatbot-input button {
+      margin-right: 0;
+      margin-left: 0.5rem;
+    }
+    .chatbot-input button:hover {
+      background: #e6c44a;
     }
     .card {
       background: #1a1a1a;
@@ -167,8 +320,19 @@
         display: none;
         padding: 1.5rem;
       }
+      [lang="en"] .nav-menu {
+        right: auto;
+        left: 0;
+      }
       .nav-menu.active {
         display: flex;
+      }
+      .nav-menu li {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+      [lang="en"] .nav-menu li {
+        margin-left: 0;
       }
       .hamburger {
         display: block;
@@ -188,13 +352,43 @@
       .header-logo {
         display: none;
       }
+      .chatbot-container {
+        width: 90%;
+        right: 5%;
+      }
+      [lang="en"] .chatbot-container {
+        right: auto;
+        left: 5%;
+      }
+      .section-header {
+        justify-content: flex-start;
+      }
+      [lang="en"] .section-header {
+        justify-content: flex-start;
+      }
+      .section-profile {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+      [lang="en"] .section-profile {
+        margin-right: 0;
+        margin-left: 1rem;
+      }
     }
     @media (min-width: 769px) {
       .header-profile {
         margin-right: 1rem;
       }
+      [lang="en"] .header-profile {
+        margin-right: 0;
+        margin-left: 1rem;
+      }
       .header-logo {
         margin-left: 1rem;
+      }
+      [lang="en"] .header-logo {
+        margin-left: 0;
+        margin-right: 1rem;
       }
     }
   </style>
@@ -212,154 +406,200 @@
   </div>
 
   <!-- Chatbot Button -->
-  <div class="chatbot-button" onclick="openChatbot()">💬</div>
+  <div class="chatbot-button" onclick="toggleChatbot()">💬</div>
+
+  <!-- Chatbot Container -->
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header" data-fa="خیام - چت‌بات سهیل سلیمی" data-en="Khayyam - Soheil Salimi's Chatbot">خیام - چت‌بات سهیل سلیمی</div>
+    <div class="chatbot-messages" id="chatbotMessages">
+      <div class="chatbot-message bot-message" data-fa="سلام، من خیام هستم از وبسایت سهیل سلیمی، چه کمکی میتونم بهت بکنم؟" data-en="Hello, I'm Khayyam from Soheil Salimi's website. How can I assist you?">سلام، من خیام هستم از وبسایت سهیل سلیمی، چه کمکی میتونم بهت بکنم؟</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="chatbotInput" data-fa-placeholder="پیام خود را بنویسید..." data-en-placeholder="Type your message..." placeholder="پیام خود را بنویسید..." />
+      <button onclick="sendMessage()" data-fa="ارسال" data-en="Send">ارسال</button>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <nav class="bg-gray-900 p-5 shadow-2xl fixed w-full z-50">
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center">
-        <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalini-pic.jpg" alt="عکس سهیل" class="header-profile md:block">
+        <a href="#">
+          <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalini-pic.jpg" alt="عکس سهیل" class="header-profile md:block">
+        </a>
         <div class="hamburger md:hidden text-white text-3xl cursor-pointer" onclick="toggleMenu()">☰</div>
       </div>
       <ul class="nav-menu hidden md:flex space-x-8">
-        <li><a href="#cinema" class="nav-link text-lg">سینما و رسانه</a></li>
-        <li><a href="#cybernetics" class="nav-link text-lg">سایبرنتیک و هوش مصنوعی</a></li>
-        <li><a href="#strategy" class="nav-link text-lg">استراتژی</a></li>
-        <li><a href="#works" class="nav-link text-lg">آثار</a></li>
-        <li><a href="#resume" class="nav-link text-lg">رزومه</a></li>
-        <li><a href="#awards" class="nav-link text-lg">جوایز و تقدیرها</a></li>
-        <li><a href="#social" class="nav-link text-lg">شبکه‌های اجتماعی</a></li>
-        <li><a href="#youtube" class="nav-link text-lg">کانال یوتیوب</a></li>
-        <li><a href="#related" class="nav-link text-lg">صفحات مرتبط</a></li>
-        <li><a href="#about" class="nav-link text-lg">درباره من</a></li>
-        <li><a href="#contact" class="nav-link text-lg">تماس</a></li>
+        <li><a href="#cinema" class="nav-link text-lg" data-fa="سینما و رسانه" data-en="Cinema and Media">سینما و رسانه</a></li>
+        <li><a href="#cybernetics" class="nav-link text-lg" data-fa="سایبرنتیک و هوش مصنوعی" data-en="Cybernetics and AI">سایبرنتیک و هوش مصنوعی</a></li>
+        <li><a href="#strategy" class="nav-link text-lg" data-fa="استراتژی" data-en="Strategy">استراتژی</a></li>
+        <li><a href="#works" class="nav-link text-lg" data-fa="آثار" data-en="Works">آثار</a></li>
+        <li><a href="#resume" class="nav-link text-lg" data-fa="رزومه" data-en="Resume">رزومه</a></li>
+        <li><a href="#awards" class="nav-link text-lg" data-fa="جوایز و تقدیرها" data-en="Awards">جوایز و تقدیرها</a></li>
+        <li><a href="#social" class="nav-link text-lg" data-fa="شبکه‌های اجتماعی" data-en="Social Media">شبکه‌های اجتماعی</a></li>
+        <li><a href="#youtube" class="nav-link text-lg" data-fa="کانال یوتیوب" data-en="YouTube Channel">کانال یوتیوب</a></li>
+        <li><a href="#related" class="nav-link text-lg" data-fa="صفحات مرتبط" data-en="Related Pages">صفحات مرتبط</a></li>
+        <li><a href="#about" class="nav-link text-lg" data-fa="درباره من" data-en="About Me">درباره من</a></li>
+        <li><a href="#contact" class="nav-link text-lg" data-fa="تماس" data-en="Contact">تماس</a></li>
       </ul>
-      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa-cornerlogo.png.png" alt="لوگو گوشه" class="header-logo md:block hidden">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa-cornerlogo.png" alt="لوگو گوشه" class="header-logo md:block hidden">
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
     <div>
-      <h1 class="text-6xl md:text-8xl font-bold text-white animate-pulse">سهیل سلیمی</h1>
-      <p class="text-2xl md:text-3xl mt-6 text-gray-200">نویسنده و فیلمساز | پژوهشگر مطالعات استراتژیک و سایبرنتیک</p>
-      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa.png.png" alt="لوگو اصلی" class="main-logo mx-auto mt-8">
-      <a href="#works" class="mt-8 inline-block bg-teal-500 text-white py-4 px-8 rounded-full hover:bg-teal-600 transition-transform hover:scale-105 text-lg">مشاهده آثار</a>
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="hero-profile mx-auto">
+      <h1 class="text-6xl md:text-8xl font-bold text-white animate-pulse" data-fa="سهیل سلیمی" data-en="Soheil Salimi">سهیل سلیمی</h1>
+      <p class="text-2xl md:text-3xl mt-6 text-gray-200" data-fa="نویسنده و فیلمساز | پژوهشگر مطالعات استراتژیک و سایبرنتیک" data-en="Writer and Filmmaker | Researcher in Strategic Studies and Cybernetics">نویسنده و فیلمساز | پژوهشگر مطالعات استراتژیک و سایبرنتیک</p>
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-fa.png" alt="لوگو اصلی" class="main-logo mx-auto mt-8">
+      <a href="#works" class="mt-8 inline-block bg-teal-500 text-white py-4 px-8 rounded-full hover:bg-teal-600 transition-transform hover:scale-105 text-lg" data-fa="مشاهده آثار" data-en="View Works">مشاهده آثار</a>
     </div>
   </section>
 
   <!-- Sections -->
   <section id="cinema" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">سینما و رسانه</h2>
-    <p class="text-xl leading-relaxed">پژوهش و فعالیت حرفه‌ای در حوزه سینما و رسانه با تمرکز بر روایت‌های فرهنگی و استراتژیک، خلق آثاری که مرزهای هنر و پیام را جابه‌جا می‌کنند.</p>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="سینما و رسانه" data-en="Cinema and Media">سینما و رسانه</h2>
+    </div>
+    <p class="text-xl leading-relaxed" data-fa="پژوهش و فعالیت حرفه‌ای در حوزه سینما و رسانه با تمرکز بر روایت‌های فرهنگی و استراتژیک، خلق آثاری که مرزهای هنر و پیام را جابه‌جا می‌کنند." data-en="Professional research and activity in cinema and media, focusing on cultural and strategic narratives, creating works that push the boundaries of art and message.">پژوهش و فعالیت حرفه‌ای در حوزه سینما و رسانه با تمرکز بر روایت‌های فرهنگی و استراتژیک، خلق آثاری که مرزهای هنر و پیام را جابه‌جا می‌کنند.</p>
   </section>
 
   <section id="cybernetics" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">سایبرنتیک و هوش مصنوعی</h2>
-    <p class="text-xl leading-relaxed">مطالعات تخصصی در سایبرنتیک و هوش مصنوعی با رویکردی نوآورانه، به‌منظور درک و شکل‌دهی به آینده فناوری و فرهنگ.</p>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="سایبرنتیک و هوش مصنوعی" data-en="Cybernetics and AI">سایبرنتیک و هوش مصنوعی</h2>
+    </div>
+    <p class="text-xl leading-relaxed" data-fa="مطالعات تخصصی در سایبرنتیک و هوش مصنوعی با رویکردی نوآورانه، به‌منظور درک و شکل‌دهی به آینده فناوری و فرهنگ." data-en="Specialized studies in cybernetics and AI with an innovative approach, aiming to understand and shape the future of technology and culture.">مطالعات تخصصی در سایبرنتیک و هوش مصنوعی با رویکردی نوآورانه، به‌منظور درک و شکل‌دهی به آینده فناوری و فرهنگ.</p>
   </section>
 
   <section id="strategy" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">استراتژی</h2>
-    <p class="text-xl leading-relaxed">مشاوره استراتژیک با گرایش سینمای استراتژیک و مدیریت تحولات فرهنگی، برای خلق راه‌حل‌های پایدار و تأثیرگذار.</p>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="استراتژی" data-en="Strategy">استراتژی</h2>
+    </div>
+    <p class="text-xl leading-relaxed" data-fa="مشاوره استراتژیک با گرایش سینمای استراتژیک و مدیریت تحولات فرهنگی، برای خلق راه‌حل‌های پایدار و تأثیرگذار." data-en="Strategic consulting with a focus on strategic cinema and managing cultural transformations, creating sustainable and impactful solutions.">مشاوره استراتژیک با گرایش سینمای استراتژیک و مدیریت تحولات فرهنگی، برای خلق راه‌حل‌های پایدار و تأثیرگذار.</p>
   </section>
 
   <section id="works" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">آثار</h2>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="آثار" data-en="Works">آثار</h2>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="card">
-        <h3 class="text-2xl text-d4af37 mb-2">مستند "رویای سون‌تزو" (1403)</h3>
-        <p class="text-lg">کارگردانی، نویسندگی و تهیه‌کنندگی</p>
+        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مستند 'رویای سون‌تزو' (1403)" data-en="Documentary 'Sun Tzu’s Dream' (2024)">مستند "رویای سون‌تزو" (1403)</h3>
+        <p class="text-lg" data-fa="کارگردانی، نویسندگی و تهیه‌کنندگی" data-en="Directing, Screenwriting, and Producing">کارگردانی، نویسندگی و تهیه‌کنندگی</p>
       </div>
       <div class="card">
-        <h3 class="text-2xl text-d4af37 mb-2">مجموعه مستند "جنایت نامرئی" (1401-1399)</h3>
-        <p class="text-lg">کارگردانی، نویسندگی و تهیه‌کنندگی</p>
+        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مجموعه مستند 'جنایت نامرئی' (1401-1399)" data-en="Documentary Series 'Invisible Crime' (2020-2022)">مجموعه مستند "جنایت نامرئی" (1401-1399)</h3>
+        <p class="text-lg" data-fa="کارگردانی، نویسندگی و تهیه‌کنندگی" data-en="Directing, Screenwriting, and Producing">کارگردانی، نویسندگی و تهیه‌کنندگی</p>
       </div>
       <div class="card">
-        <h3 class="text-2xl text-d4af37 mb-2">مجموعه مستند "جاری چون رود" (1401-1400)</h3>
-        <p class="text-lg">کارگردانی، نویسندگی و تدوین</p>
+        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مجموعه مستند 'جاری چون رود' (1401-1400)" data-en="Documentary Series 'Flowing Like a River' (2021-2022)">مجموعه مستند "جاری چون رود" (1401-1400)</h3>
+        <p class="text-lg" data-fa="کارگردانی، نویسندگی و تدوین" data-en="Directing, Screenwriting, and Editing">کارگردانی، نویسندگی و تدوین</p>
       </div>
       <div class="card">
-        <h3 class="text-2xl text-d4af37 mb-2">مستند "جهان فانتزی من" (1399)</h3>
-        <p class="text-lg">کارگردانی و تدوین</p>
+        <h3 class="text-2xl text-d4af37 mb-2" data-fa="مستند 'جهان فانتزی من' (1399)" data-en="Documentary 'My Fantasy World' (2020)">مستند "جهان فانتزی من" (1399)</h3>
+        <p class="text-lg" data-fa="کارگردانی و تدوین" data-en="Directing and Editing">کارگردانی و تدوین</p>
       </div>
     </div>
   </section>
 
   <section id="resume" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">رزومه</h2>
-    <p class="text-xl leading-relaxed">دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد، دانش‌آموخته کارگردانی سینما از انجمن سینمای جوانان ایران، و گواهینامه‌های متعدد در مدیریت، استراتژی و کارآفرینی.</p>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="رزومه" data-en="Resume">رزومه</h2>
+    </div>
+    <p class="text-xl leading-relaxed" data-fa="دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد، دانش‌آموخته کارگردانی سینما از انجمن سینمای جوانان ایران، و گواهینامه‌های متعدد در مدیریت، استراتژی و کارآفرینی." data-en="Holds a documentary directing degree from the Ministry of Culture, trained in film directing at the Iran Young Cinema Association, and possesses multiple certificates in management, strategy, and entrepreneurship.">دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد، دانش‌آموخته کارگردانی سینما از انجمن سینمای جوانان ایران، و گواهینامه‌های متعدد در مدیریت، استراتژی و کارآفرینی.</p>
   </section>
 
   <section id="awards" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">جوایز و تقدیرها</h2>
-    <ul class="list-disc pr-8 text-xl leading-relaxed">
-      <li>برنده جایزه اول جشنواره "FiLMAKA" آمریکا برای مستند "سفری به جنگ با یک بازیگر" (1398)</li>
-      <li>کاندیدای مردمی بهترین فیلمنامه‌نویس جشنواره مقاومت (1397)</li>
-      <li>دریافت جایزه جنگاور نور از دانشگاه بریتیش کلمبیا (1392)</li>
-      <li>جایزه سرخپوستان کانادا برای کارگردانی فیلم "فرشتگان قصاب" (1392)</li>
-      <li>فانوس زرین بهترین فیلمنامه جشنواره عمار برای "فرشتگان قصاب" (1392)</li>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="جوایز و تقدیرها" data-en="Awards">جوایز و تقدیرها</h2>
+    </div>
+    <ul class="list-disc text-xl leading-relaxed">
+      <li data-fa="برنده جایزه اول جشنواره 'FiLMAKA' آمریکا برای مستند 'سفری به جنگ با یک بازیگر' (1398)" data-en="Winner of the First Prize at the 'FiLMAKA' Festival in the USA for the documentary 'A Journey to War with an Actor' (2019)">برنده جایزه اول جشنواره "FiLMAKA" آمریکا برای مستند "سفری به جنگ با یک بازیگر" (1398)</li>
+      <li data-fa="کاندیدای مردمی بهترین فیلمنامه‌نویس جشنواره مقاومت (1397)" data-en="People’s Choice Nominee for Best Screenwriter at the Resistance Festival (2018)">کاندیدای مردمی بهترین فیلمنامه‌نویس جشنواره مقاومت (1397)</li>
+      <li data-fa="دریافت جایزه جنگاور نور از دانشگاه بریتیش کلمبیا (1392)" data-en="Received the Light Warrior Award from the University of British Columbia (2013)">دریافت جایزه جنگاور نور از دانشگاه بریتیش کلمبیا (1392)</li>
+      <li data-fa="جایزه سرخپوستان کانادا برای کارگردانی فیلم 'فرشتگان قصاب' (1392)" data-en="Canadian Indigenous Award for Directing the film 'Angels of the Butcher' (2013)">جایزه سرخپوستان کانادا برای کارگردانی فیلم "فرشتگان قصاب" (1392)</li>
+      <li data-fa="فانوس زرین بهترین فیلمنامه جشنواره عمار برای 'فرشتگان قصاب' (1392)" data-en="Golden Lantern for Best Screenplay at the Ammar Festival for 'Angels of the Butcher' (2013)">فانوس زرین بهترین فیلمنامه جشنواره عمار برای "فرشتگان قصاب" (1392)</li>
     </ul>
   </section>
 
   <section id="social" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">شبکه‌های اجتماعی</h2>
-    <p class="text-xl leading-relaxed">ارتباط از طریق شبکه‌های اجتماعی:</p>
-    <a href="https://eitaa.com/soheilsalimi1" target="_blank" class="text-teal-500 hover:text-teal-400 text-xl">ایتا</a>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="شبکه‌های اجتماعی" data-en="Social Media">شبکه‌های اجتماعی</h2>
+    </div>
+    <p class="text-xl leading-relaxed" data-fa="ارتباط از طریق شبکه‌های اجتماعی:" data-en="Connect via social media:">ارتباط از طریق شبکه‌های اجتماعی:</p>
+    <a href="https://eitaa.com/soheilsalimi1" target="_blank" class="text-teal-500 hover:text-teal-400 text-xl" data-fa="ایتا" data-en="Eitaa">ایتا</a>
   </section>
 
   <section id="youtube" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">کانال یوتیوب</h2>
-    <p class="text-xl"><a href="https://www.youtube.com/@soheilsalimi1" target="_blank" class="text-teal-500 hover:text-teal-400">مشاهده کانال یوتیوب</a></p>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="کانال یوتیوب" data-en="YouTube Channel">کانال یوتیوب</h2>
+    </div>
+    <p class="text-xl"><a href="https://www.youtube.com/@soheilsalimi1" target="_blank" class="text-teal-500 hover:text-teal-400" data-fa="مشاهده کانال یوتیوب" data-en="Visit YouTube Channel">مشاهده کانال یوتیوب</a></p>
   </section>
 
   <section id="related" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">صفحات مرتبط</h2>
-    <ul class="list-disc pr-8 text-xl leading-relaxed">
-      <li><a href="https://soheilsalimi.blogsky.com/" target="_blank" class="text-teal-500 hover:text-teal-400">وبلاگ</a></li>
-      <li><a href="https://www.imdb.com/name/nm9375886/" target="_blank" class="text-teal-500 hover:text-teal-400">IMDb</a></li>
-      <li><a href="https://filmfreeway.com/SOHEILSALIMI" target="_blank" class="text-teal-500 hover:text-teal-400">FilmFreeway</a></li>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="صفحات مرتبط" data-en="Related Pages">صفحات مرتبط</h2>
+    </div>
+    <ul class="list-disc text-xl leading-relaxed">
+      <li><a href="https://soheilsalimi.blogsky.com/" target="_blank" class="text-teal-500 hover:text-teal-400" data-fa="وبلاگ" data-en="Blog">وبلاگ</a></li>
+      <li><a href="https://www.imdb.com/name/nm9375886/" target="_blank" class="text-teal-500 hover:text-teal-400" data-fa="IMDb" data-en="IMDb">IMDb</a></li>
+      <li><a href="https://filmfreeway.com/SOHEILSALIMI" target="_blank" class="text-teal-500 hover:text-teal-400" data-fa="FilmFreeway" data-en="FilmFreeway">FilmFreeway</a></li>
     </ul>
   </section>
 
   <section id="about" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">درباره من</h2>
-    <p class="text-xl leading-relaxed">سهیل سلیمی، متولد 1357 در تهران، نویسنده، فیلمساز و پژوهشگر حوزه مطالعات استراتژیک، سایبرنتیک و هوش مصنوعی است. او دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد و دانش‌آموخته کارگردانی سینما از انجمن سینمای جوانان ایران است.</p>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="درباره من" data-en="About Me">درباره من</h2>
+    </div>
+    <p class="text-xl leading-relaxed" data-fa="سهیل سلیمی، متولد 1357 در تهران، نویسنده، فیلمساز و پژوهشگر حوزه مطالعات استراتژیک، سایبرنتیک و هوش مصنوعی است. او دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد و دانش‌آموخته کارگردانی سینما از انجمن سینمای جوانان ایران است." data-en="Soheil Salimi, born in 1978 in Tehran, is a writer, filmmaker, and researcher in strategic studies, cybernetics, and AI. He holds a documentary directing degree from the Ministry of Culture and is trained in film directing at the Iran Young Cinema Association.">سهیل سلیمی، متولد 1357 در تهران، نویسنده، فیلمساز و پژوهشگر حوزه مطالعات استراتژیک، سایبرنتیک و هوش مصنوعی است. او دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد و دانش‌آموخته کارگردانی سینما از انجمن سینمای جوانان ایران است.</p>
   </section>
 
   <section id="contact" class="section scroll-reveal">
-    <h2 class="text-4xl font-bold mb-6 text-teal-400">تماس</h2>
-    <p class="text-xl leading-relaxed">ارتباط از طریق:</p>
-    <p class="text-xl leading-relaxed">پیامک/واتس‌اپ/تلگرام/ایتا: 09800000000</p>
-    <p class="text-xl"><a href="https://eitaa.com/soheilsalimi1" target="_blank" class="text-teal-500 hover:text-teal-400">ایتا</a></p>
+    <div class="section-header">
+      <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/soheilsalimi-pic-red.jpg" alt="عکس سهیل" class="section-profile">
+      <h2 class="text-4xl font-bold text-teal-400" data-fa="تماس" data-en="Contact">تماس</h2>
+    </div>
+    <p class="text-xl leading-relaxed" data-fa="ارتباط از طریق:" data-en="Connect via:">ارتباط از طریق:</p>
+    <p class="text-xl leading-relaxed" data-fa="پیامک/واتس‌اپ/تلگرام/ایتا: 09800000000" data-en="SMS/WhatsApp/Telegram/Eitaa: 09800000000">پیامک/واتس‌اپ/تلگرام/ایتا: 09800000000</p>
+    <p class="text-xl"><a href="https://eitaa.com/soheilsalimi1" target="_blank" class="text-teal-500 hover:text-teal-400" data-fa="ایتا" data-en="Eitaa">ایتا</a></p>
   </section>
 
   <!-- Footer Logo -->
-  <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-ssalimi.png.png" alt="لوگوی انگلیسی" class="footer-logo h-20">
+  <img src="https://github.com/soheilsalimiir/soheilsalimi.github.io/raw/main/images/logo-ssalimi.png" alt="لوگوی انگلیسی" class="footer-logo h-20">
 
-  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js"></script>
   <script>
-    // Enhanced Particle Background with Faster, More Dynamic Interactions
+    // Particle Background
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
     const particles = [];
-    const particleCount = 200; // Increased for more density
-    let mouse = { x: null, y: null, radius: 120 }; // Larger interaction radius
+    const particleCount = 250;
+    let mouse = { x: null, y: null, radius: 150 };
 
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3 + 0.5;
+        this.size = Math.random() * 3.5 + 0.5;
         this.baseX = this.x;
         this.baseY = this.y;
-        this.speedX = Math.random() * 0.8 - 0.4; // Faster movement
-        this.speedY = Math.random() * 0.8 - 0.4;
+        this.speedX = Math.random() * 1.2 - 0.6;
+        this.speedY = Math.random() * 1.2 - 0.6;
+        this.phase = Math.random() * Math.PI * 2;
       }
       update() {
         let dx = mouse.x - this.x;
@@ -369,25 +609,30 @@
         let forceDirectionY = dy / distance;
         let maxDistance = mouse.radius;
         let force = (maxDistance - distance) / maxDistance;
-        let directionX = forceDirectionX * force * 1.2; // Stronger mouse reaction
-        let directionY = forceDirectionY * force * 1.2;
+        let directionX = forceDirectionX * force * 1.5;
+        let directionY = forceDirectionY * force * 1.5;
 
         if (distance < mouse.radius) {
           this.x -= directionX;
           this.y -= directionY;
+        } else if (distance < mouse.radius * 2) {
+          this.x += directionX * 0.5;
+          this.y += directionY * 0.5;
         } else {
           if (this.x !== this.baseX) {
             let dx = this.x - this.baseX;
-            this.x -= dx / 15; // Faster return to base
+            this.x -= dx / 10;
           }
           if (this.y !== this.baseY) {
             let dy = this.y - this.baseY;
-            this.y -= dy / 15;
+            this.y -= dy / 10;
           }
         }
 
-        this.x += this.speedX;
-        this.y += this.speedY;
+        this.phase += 0.05;
+        this.x += this.speedX + Math.sin(this.phase) * 0.5;
+        this.y += this.speedY + Math.cos(this.phase) * 0.5;
+
         if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
         if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
       }
@@ -402,9 +647,9 @@
           let dx = this.x - other.x;
           let dy = this.y - other.y;
           let distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < 80) { // Tighter connections for faster form changes
-            ctx.strokeStyle = 'rgba(212, 175, 55, ' + (1 - distance / 80) + ')';
-            ctx.lineWidth = 0.6;
+          if (distance < 70) {
+            ctx.strokeStyle = 'rgba(212, 175, 55, ' + (1 - distance / 70) + ')';
+            ctx.lineWidth = 0.7;
             ctx.beginPath();
             ctx.moveTo(this.x, this.y);
             ctx.lineTo(other.x, other.y);
@@ -433,7 +678,6 @@
     initParticles();
     animateParticles();
 
-    // Mouse/Touch Interaction
     window.addEventListener('mousemove', (event) => {
       mouse.x = event.x;
       mouse.y = event.y;
@@ -474,14 +718,96 @@
     // Language Switcher
     function switchLanguage() {
       const lang = document.getElementById('language').value;
-      if (lang === 'en') {
-        window.location.href = '/en'; // Placeholder for English version
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-fa][data-en]').forEach(element => {
+        element.textContent = element.getAttribute(`data-${lang}`);
+      });
+      document.querySelectorAll('[data-fa-placeholder][data-en-placeholder]').forEach(element => {
+        element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+      });
+      document.title = document.querySelector('title').getAttribute(`data-${lang}`);
+      toggleChatbot(false); // Reset chatbot
+      const messages = document.getElementById('chatbotMessages');
+      messages.innerHTML = `<div class="chatbot-message bot-message" data-fa="سلام، من خیام هستم از وبسایت سهیل سلیمی، چه کمکی میتونم بهت بکنم؟" data-en="Hello, I'm Khayyam from Soheil Salimi's website. How can I assist you?">${lang === 'fa' ? 'سلام، من خیام هستم از وبسایت سهیل سلیمی، چه کمکی میتونم بهت بکنم؟' : 'Hello, I\'m Khayyam from Soheil Salimi\'s website. How can I assist you?'}</div>`;
+    }
+
+    // Chatbot Functionality
+    function toggleChatbot(show = true) {
+      const chatbotContainer = document.getElementById('chatbotContainer');
+      chatbotContainer.style.display = show ? 'flex' : 'none';
+      if (show && document.documentElement.lang === 'en') {
+        const messages = document.getElementById('chatbotMessages');
+        messages.innerHTML = `<div class="chatbot-message bot-message" data-fa="سلام، من خیام هستم از وبسایت سهیل سلیمی، چه کمکی میتونم بهت بکنم؟" data-en="Hello, I'm Khayyam from Soheil Salimi's website. How can I assist you?">Hello, I'm Khayyam from Soheil Salimi's website. How can I assist you?</div>`;
       }
     }
 
-    // Chatbot Placeholder
-    function openChatbot() {
-      alert('چت‌بات در حال توسعه است. برای اتصال به چت‌بات، لطفاً API مورد نظر (مثلاً https://x.ai/api) را مشخص کنید.');
+    function sendMessage() {
+      const input = document.getElementById('chatbotInput');
+      const messages = document.getElementById('chatbotMessages');
+      const userMessage = input.value.trim();
+      const lang = document.documentElement.lang;
+
+      if (userMessage) {
+        // Add user message
+        const userDiv = document.createElement('div');
+        userDiv.className = 'chatbot-message user-message';
+        userDiv.textContent = userMessage;
+        messages.appendChild(userDiv);
+
+        // Add bot response
+        const botDiv = document.createElement('div');
+        botDiv.className = 'chatbot-message bot-message';
+        botDiv.textContent = getBotResponse(userMessage, lang);
+        messages.appendChild(botDiv);
+
+        // Scroll to bottom
+        messages.scrollTop = messages.scrollHeight;
+
+        // Clear input
+        input.value = '';
+      }
+    }
+
+    function getBotResponse(message, lang) {
+      const lowerMessage = message.toLowerCase();
+      const isFa = lang === 'fa';
+
+      // General greetings
+      if (lowerMessage.includes(isFa ? 'سلام' : 'hello') || lowerMessage.includes(isFa ? 'درود' : 'hi')) {
+        return isFa ? 'سلام! خوشحال می‌شم که بتونم بهت کمک کنم. درباره چی دوست داری صحبت کنیم؟' : 'Hello! I’m excited to help you. What would you like to talk about?';
+      }
+
+      // Soheil Salimi-related queries
+      if (lowerMessage.includes(isFa ? 'سهیل' : 'soheil') || lowerMessage.includes(isFa ? 'سلیمی' : 'salimi')) {
+        return isFa ? 'سهیل سلیمی نویسنده، فیلمساز و پژوهشگر در حوزه استراتژی و سایبرنتیک است. برای اطلاعات بیشتر، بخش "درباره من" را ببینید!' : 'Soheil Salimi is a writer, filmmaker, and researcher in strategic studies and cybernetics. Check out the "About Me" section for more!';
+      } else if (lowerMessage.includes(isFa ? 'آثار' : 'works') || lowerMessage.includes(isFa ? 'فیلم' : 'film')) {
+        return isFa ? 'برای مشاهده آثار سهیل سلیمی، به بخش "آثار" مراجعه کنید. مستندهایی مثل "رویای سون‌تزو" و "جنایت نامرئی" را از دست ندهید!' : 'To view Soheil Salimi’s works, go to the "Works" section. Don’t miss documentaries like "Sun Tzu’s Dream" and "Invisible Crime"!';
+      } else if (lowerMessage.includes(isFa ? 'تماس' : 'contact')) {
+        return isFa ? 'می‌توانید از طریق ایتا (https://eitaa.com/soheilsalimi1) یا شماره 09800000000 با سهیل سلیمی تماس بگیرید.' : 'You can contact Soheil Salimi via Eitaa (https://eitaa.com/soheilsalimi1) or the number 09800000000.';
+      }
+
+      // Screenwriting lessons
+      if (lowerMessage.includes(isFa ? 'فیلمنامه' : 'screenwriting') || lowerMessage.includes(isFa ? 'نویسندگی' : 'writing')) {
+        return isFa ? 'فیلمنامه‌نویسی نیاز به ساختار قوی و شخصیت‌پردازی عمیق داره. یه داستان خوب معمولاً سه بخش داره: شروع، میانه و پایان. می‌خوای درباره ساختار سه‌پرده‌ای یا توسعه شخصیت بیشتر بدونی؟' : 'Screenwriting requires a strong structure and deep character development. A good story typically has three acts: beginning, middle, and end. Want to learn more about three-act structure or character development?';
+      }
+
+      // Documentary filmmaking
+      if (lowerMessage.includes(isFa ? 'مستند' : 'documentary')) {
+        return isFa ? 'ساخت مستند نیاز به تحقیق عمیق، روایت بصری قوی و انتخاب سوژه مناسب داره. می‌تونی با یه ایده شخصی شروع کنی و بعد زاویه دید منحصربه‌فردت رو پیدا کنی. درباره تحقیق یا تکنیک‌های مصاحبه راهنمایی می‌خوای؟' : 'Documentary filmmaking requires thorough research, strong visual storytelling, and a compelling subject. Start with a personal idea and find your unique perspective. Need tips on research or interview techniques?';
+      }
+
+      // Directing
+      if (lowerMessage.includes(isFa ? 'کارگردانی' : 'directing')) {
+        return isFa ? 'کارگردانی یعنی هدایت تیم و انتقال دیدگاه هنری به مخاطب. باید بتونی بازیگرها رو هدایت کنی، کادربندی مناسب انتخاب کنی و ریتم داستان رو حفظ کنی. درباره کار با بازیگر یا مدیریت صحنه چیزی می‌خوای بدونی؟' : 'Directing is about leading the team and conveying your artistic vision to the audience. You need to guide actors, choose effective framing, and maintain the story’s pace. Want to know more about working with actors or managing a set?';
+      }
+
+      // General filmmaking
+      if (lowerMessage.includes(isFa ? 'سینما' : 'cinema') || lowerMessage.includes(isFa ? 'فیلمسازی' : 'filmmaking')) {
+        return isFa ? 'فیلمسازی ترکیبی از هنر و تکنیکه. از پیش‌تولید (فیلمنامه و برنامه‌ریزی) تا تولید (فیلمبرداری) و پس‌تولید (تدوین و صدا). کدوم بخش برات جذاب‌تره؟' : 'Filmmaking is a blend of art and technique, from pre-production (screenwriting and planning) to production (shooting) and post-production (editing and sound). Which part interests you most?';
+      }
+
+      // Fallback for other queries
+      return isFa ? 'سوال جالبی بود! من درباره سینما، فیلمنامه‌نویسی، مستندسازی، کارگردانی و خیلی چیزای دیگه می‌تونم صحبت کنم. یه سوال خاص‌تر بپرس تا بتونم بهتر راهنمایی کنم!' : 'That’s an interesting question! I can talk about cinema, screenwriting, documentary filmmaking, directing, and much more. Ask something specific, and I’ll guide you better!';
     }
   </script>
 </body>
