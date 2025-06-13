@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سهیل سلیمی | نویسنده و فیلمساز</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anjoman:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Anjoman', sans-serif;
+      background-color: #d1d5db; /* Gray background */
+      color: #4a2c2a; /* Dark brown for contrast */
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    nav {
+      background-color: #f97316; /* Vibrant orange */
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav ul li a {
+      color: #fef3c7; /* Warm yellow for text */
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #fff7ed; /* Light cream hover */
+    }
+    .accordion {
+      margin: 1rem 0;
+      background-color: #fdba74; /* Warm peach */
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .accordion-header {
+      padding: 1rem;
+      background-color: #f97316; /* Orange */
+      color: #fef3c7; /* Warm yellow */
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .accordion-content {
+      padding: 0 1rem 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .accordion-content.active {
+      max-height: 500px; /* Adjust based on content */
+    }
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #f97316; /* Orange */
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fef3c7; /* Warm yellow */
+      font-size: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .chatbot:hover {
+      background-color: #ea580c; /* Darker orange */
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#cinema">سینما و رسانه</a></li>
+      <li><a href="#cyber">سایبرنتیک و هوش مصنوعی</a></li>
+      <li><a href="#strategy">استراتژی</a></li>
+      <li><a href="#works">آثار</a></li>
+      <li><a href="#samples">نمونه آثار</a></li>
+      <li><a href="#resume">رزومه</a></li>
+      <li><a href="#awards">جوایز و تقدیرها</a></li>
+      <li><a href="#social">شبکه های اجتماعی</a></li>
+      <li><a href="#related">صفحات مرتبط</a></li>
+      <li><a href="#about">درباره من</a></li>
+      <li><a href="#contact">تماس</a></li>
+    </ul>
+  </nav>
 
+  <div class="container">
+    <header>
+      <img src="logo.jpg" alt="لوگو سهیل سلیمی" style="max-width: 200px;">
+      <img src="photo.jpg" alt="عکس سهیل سلیمی" style="max-width: 200px;">
+      <h1>سهیل سلیمی | نویسنده و فیلمساز | پژوهشگر حوزه مطالعات استراتژیک فرهنگی، سایبرنتیک و هوش مصنوعی</h1>
+    </header>
+
+    <div class="accordion" id="cinema">
+      <div class="accordion-header" onclick="toggleAccordion('cinema-content')">سینما و رسانه</div>
+      <div class="accordion-content" id="cinema-content">
+        <p>محتوای مربوط به سینما و رسانه در اینجا قرار می‌گیرد.</p>
+        <a href="#cyber">برو به سایبرنتیک و هوش مصنوعی</a> | <a href="#strategy">برو به استراتژی</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="cyber">
+      <div class="accordion-header" onclick="toggleAccordion('cyber-content')">سایبرنتیک و هوش مصنوعی</div>
+      <div class="accordion-content" id="cyber-content">
+        <p>محتوای مربوط به سایبرنتیک و هوش مصنوعی در اینجا قرار می‌گیرد.</p>
+        <a href="#cinema">برو به سینما و رسانه</a> | <a href="#strategy">برو به استراتژی</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="strategy">
+      <div class="accordion-header" onclick="toggleAccordion('strategy-content')">استراتژی</div>
+      <div class="accordion-content" id="strategy-content">
+        <p>محتوای مربوط به استراتژی در اینجا قرار می‌گیرد.</p>
+        <a href="#cinema">برو به سینما و رسانه</a> | <a href="#cyber">برو به سایبرنتیک و هوش مصنوعی</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="works">
+      <div class="accordion-header" onclick="toggleAccordion('works-content')">آثار</div>
+      <div class="accordion-content" id="works-content">
+        <p>لیست آثار در اینجا قرار می‌گیرد.</p>
+        <a href="#samples">برو به نمونه آثار</a> | <a href="#resume">برو به رزومه</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="samples">
+      <div class="accordion-header" onclick="toggleAccordion('samples-content')">نمونه آثار</div>
+      <div class="accordion-content" id="samples-content">
+        <p>نمونه‌های آثار در اینجا قرار می‌گیرد.</p>
+        <a href="#works">برو به آثار</a> | <a href="#resume">برو به رزومه</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="resume">
+      <div class="accordion-header" onclick="toggleAccordion('resume-content')">رزومه</div>
+      <div class="accordion-content" id="resume-content">
+        <p>سهیل سلیمی متولد 1357 تهران دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد اسلامی، دانش آموخته کارگردانی سینما از انجمن سینمای جوانان ایران، گواهینامه سطح دو استراتژی با گرایش سینمای استراتژیک از مرکز دکترینال اندیشکده یقین، مشاور رسانه‌ای آزمایشگاه پژوهشی فضای سایبر دانشگاه تهران، پژوهشگر مطالعات سایبرنتیک و هوش مصنوعی، و دارای گواهینامه‌های مدیریت منابع انسانی، مدیریت ذهن، و مدیریت کارآفرینی.</p>
+        <a href="#samples">برو به نمونه آثار</a> | <a href="#awards">برو به جوایز و تقدیرها</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="awards">
+      <div class="accordion-header" onclick="toggleAccordion('awards-content')">جوایز و تقدیرها</div>
+      <div class="accordion-content" id="awards-content">
+        <ul>
+          <li>برنده جایزه اول جشنواره فیلم "فیلماکا" آمریکا برای مستند "سفری به جنگ با یک بازیگر" 1398</li>
+          <li>کاندید مردمی "بهترین فیلمنامه نویس" جشنواره فیلم مقاومت 1397</li>
+        </ul>
+        <a href="#resume">برو به رزومه</a> | <a href="#social">برو به شبکه های اجتماعی</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="social">
+      <div class="accordion-header" onclick="toggleAccordion('social-content')">شبکه های اجتماعی</div>
+      <div class="accordion-content" id="social-content">
+        <p>https://www.youtube.com/@soheilsalimi1</p>
+        <a href="#awards">برو به جوایز و تقدیرها</a> | <a href="#related">برو به صفحات مرتبط</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="related">
+      <div class="accordion-header" onclick="toggleAccordion('related-content')">صفحات مرتبط</div>
+      <div class="accordion-content" id="related-content">
+        <p>https://soheilsalimi.blogsky.com/</p>
+        <a href="#social">برو به شبکه های اجتماعی</a> | <a href="#about">برو به درباره من</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="about">
+      <div class="accordion-header" onclick="toggleAccordion('about-content')">درباره من</div>
+      <div class="accordion-content" id="about-content">
+        <p>سهیل سلیمی متولد 1357 تهران دارای مدرک کارگردانی مستند از وزارت فرهنگ و ارشاد اسلامی، دانش آموخته کارگردانی سینما از انجمن سینمای جوانان ایران، گواهینامه سطح دو استراتژی با گرایش سینمای استراتژیک از مرکز دکترینال اندیشکده یقین، مشاور رسانه‌ای آزمایشگاه پژوهشی فضای سایبر دانشگاه تهران، پژوهشگر مطالعات سایبرنتیک و هوش مصنوعی، و دارای گواهینامه‌های مدیریت منابع انسانی، مدیریت ذهن، و مدیریت کارآفرینی.</p>
+        <a href="#related">برو به صفحات مرتبط</a> | <a href="#contact">برو به تماس</a>
+      </div>
+    </div>
+
+    <div class="accordion" id="contact">
+      <div class="accordion-header" onclick="toggleAccordion('contact-content')">تماس</div>
+      <div class="accordion-content" id="contact-content">
+        <p>پیامک، واتس اپ، تلگرام، ایتا، بله: 09939494184<br>https://eitaa.com/soheilsalimi1</p>
+        <a href="#about">برو به درباره من</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="chatbot" onclick="openChatbot()">💬</div>
+
+  <script>
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      content.classList.toggle('active');
+    }
+    function openChatbot() {
+      alert('چت بات در حال اجرا است. برای پشتیبانی از من بپرسید!');
+    }
+  </script>
+</body>
+</html>
